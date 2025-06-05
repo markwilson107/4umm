@@ -3,7 +3,6 @@
 import dbConnect from "@/lib/dbConnect";
 import Post from "@/models/Post";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 import {
   AddPostInput,
   DeletePostInput,
@@ -14,6 +13,7 @@ import {
   deletePostSchema,
   loadMorePostsSchema,
 } from "@/validation/postSchemas";
+import { authOptions } from "../api/auth/utils/authOptions";
 
 export async function loadMorePosts(input: LoadMorePostsInput) {
   const validatedInput = loadMorePostsSchema.parse(input);
