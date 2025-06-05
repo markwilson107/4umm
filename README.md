@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 4umm
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Getting Started
+## Table of Contents
 
-First, run the development server:
+- [Description](#description)
+- [Usage](#usage)
+- [Questions](#questions)
+- [License](#license)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Description
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4umm is a forum example made in Next JS.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Features:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- User accounts
+- Create posts
+- Create comments
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone this repository:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`$ git clone https://github.com/markwilson107/4umm.git`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Setup enviroment variables:
 
-## Deploy on Vercel
+Rename `example.env` to `.env.local` and fill it out if needed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Install dependencies (this will also seed the database, INSURE THE ENV VARIABLES ARE SET UP FIRST):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`$ npm install`
+
+4. To start the application run:
+
+`$ npm run dev`
+
+Runs the app in the development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+#### or
+
+Demo deployed application: https://4umm.mkwn.dev/
+
+## Questions
+
+If you have any questions feel free to contact me here:
+
+##### Github: [github.com/markwilson107](https://github.com/markwilson107)
+
+##### Email: [markashwilson@gmail.com](mailto:markashwilson@gmail.com?subject=[GitHub])
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
+
+You have the freedom to do as you like with this permissive software, as long as an original copy and license notice is included.
