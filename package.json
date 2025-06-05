@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "seed": "node seed.js",
+    "postinstall": "npm run seed",
     "lint": "next lint"
   },
   "dependencies": {

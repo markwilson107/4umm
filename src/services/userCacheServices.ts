@@ -8,7 +8,7 @@ export const getUser = (username: string) =>
       await dbConnect();
 
       const user = await User.findOne({ username });
-      return user;
+      return user?.sanitizeSafe();
     },
     [`${username}-user`],
     {

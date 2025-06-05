@@ -11,5 +11,5 @@ export const POST = tryWrapResponse(async (request: NextRequest) => {
 
   const user = await getUser(username)
 
-  return NextResponse.json({ success: true, user: user?.sanitizeSafe() });
+  return NextResponse.json({ success: true, user });
 });
