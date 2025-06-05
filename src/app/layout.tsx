@@ -5,8 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NextTopLoader from "nextjs-toploader";
 import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
 import Providers from "@/providers";
+import { authOptions } from "./api/auth/utils/authOptions";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

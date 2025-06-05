@@ -5,7 +5,8 @@ import tryWrapResponse from "@/utils/tryWrapResponse";
 import { updateProfileSchema } from "@/validation/authSchemas";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
-import { authOptions } from "../[...nextauth]/route";
+import { authOptions } from "../utils/authOptions";
+import { revalidateTag } from "next/cache";
 
 export const POST = tryWrapResponse(async (request: NextRequest) => {
   const req = await request.json();
@@ -59,6 +60,8 @@ export const POST = tryWrapResponse(async (request: NextRequest) => {
   if (newPassword) update.password = newPassword;
 
   await User.updateOne({ id: session.user.id }, { $set: update });
+
+  revalidateTag(`${username}-user`);
 
   return NextResponse.json({ success: true });
 });

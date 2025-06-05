@@ -61,17 +61,17 @@ function LoginForm({ closeCallback }: Props) {
         onChange={(e) => onChange(e.target.value, setPassword)}
         placeholder="Password"
         errors={errors}
+        type="password"
       />
       <div className="flex justify-end gap-2 mt-5">
         <Button className="w-[90px]" size="sm" type="submit" disabled={loading}>
-          {loading ? "Loading" : "Update"}
+          {loading ? "Loading" : "Login"}
         </Button>
         <Button
           className="w-[90px]"
           size="sm"
           variant="secondary"
           onClick={closeCallback}
-          // href={{ query: { modal: null } }}
         >
           Close
         </Button>

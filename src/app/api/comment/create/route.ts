@@ -3,12 +3,12 @@ import Post from "@/models/Post";
 import tryWrapResponse from "@/utils/tryWrapResponse";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
-import { authOptions } from "../../auth/[...nextauth]/route";
 import { v4 as uuidv4 } from "uuid";
 import { revalidateTag } from "next/cache";
 import User from "@/models/User";
 import { addCommentSchema } from "@/validation/commentSchemas";
 import Comment from "@/models/Comment";
+import { authOptions } from "../../auth/utils/authOptions";
 
 export const POST = tryWrapResponse(async (request: NextRequest) => {
   const req = await request.json();

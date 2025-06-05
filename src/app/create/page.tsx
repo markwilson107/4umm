@@ -3,11 +3,19 @@ import PageWrapper from "@/components/PageWrapper";
 import dbConnect from "@/lib/dbConnect";
 import { getCategories } from "@/services/categoryService";
 import { ICategory } from "@/types/category";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "../api/auth/utils/authOptions";
+import { redirect } from "next/navigation";
 
 type Props = {};
 
 async function CreatePage({}: Props) {
   let categories: ICategory[] = [];
+  const session = await getServerSession(authOptions)
+
+	if (!session) {
+		redirect("/?modal=login")
+	}
 
   try {
     await dbConnect();

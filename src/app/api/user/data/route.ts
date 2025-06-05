@@ -1,8 +1,7 @@
-import dbConnect from "@/lib/dbConnect";
 import tryWrapResponse from "@/utils/tryWrapResponse";
 import { NextRequest, NextResponse } from "next/server";
 import { userDataSchema } from "@/validation/userSchemas";
-import User from "@/models/User";
+import { getUser } from "@/services/userCacheServices";
 
 export const POST = tryWrapResponse(async (request: NextRequest) => {
   const req = await request.json();
@@ -10,9 +9,7 @@ export const POST = tryWrapResponse(async (request: NextRequest) => {
 
   const { username } = req;
 
-  await dbConnect();
-
-  const user = await User.findOne({ username });
+  const user = await getUser(username)
 
   return NextResponse.json({ success: true, user: user?.sanitizeSafe() });
 });

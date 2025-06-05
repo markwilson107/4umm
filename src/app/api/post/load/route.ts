@@ -2,9 +2,7 @@ import dbConnect from "@/lib/dbConnect";
 import Post from "@/models/Post";
 import tryWrapResponse from "@/utils/tryWrapResponse";
 import { loadMorePostsSchema } from "@/validation/postSchemas";
-import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
-import { authOptions } from "../../auth/[...nextauth]/route";
 
 export const POST = tryWrapResponse(async (request: NextRequest) => {
   const req = await request.json();

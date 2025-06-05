@@ -8,6 +8,7 @@ import { ErrorResponseIssues } from "@/types/error";
 import { IPost } from "@/types/post";
 import { addCommentSchema } from "@/validation/commentSchemas";
 import { IComment } from "@/types/comment";
+import { useSession } from "next-auth/react";
 
 type Props = {
   post?: IPost;
@@ -18,6 +19,7 @@ function CommentForm({ post, callback }: Props) {
   const [body, setBody] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<ErrorResponseIssues>({});
+  const session = useSession();
 
   async function onSubmit(e: any) {
     e.preventDefault();
@@ -57,6 +59,8 @@ function CommentForm({ post, callback }: Props) {
     setErrors({});
     set(value);
   }
+
+  if (!session.data?.user.id) return null;
   return (
     <form className="flex flex-col w-full gap-3" onSubmit={onSubmit}>
       <InputField
