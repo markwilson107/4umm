@@ -7,7 +7,7 @@ import { ICategory } from "@/types/category";
 import { PostResponse } from "@/types/post";
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>
 };
 
 async function CategoryPage({ params }: Props) {

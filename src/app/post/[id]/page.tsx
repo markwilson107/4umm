@@ -12,7 +12,7 @@ import { CommentResponse } from "@/types/comment";
 import { IPost } from "@/types/post";
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 async function PostPage({ params }: Props) {

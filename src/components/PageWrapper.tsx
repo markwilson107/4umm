@@ -6,7 +6,7 @@ import CategorySelector from "./CategorySelector";
 type Props = {
   children: ReactNode;
   categories: ICategory[];
-  params?: { id: string };
+  params?: Promise<{ id: string }>;
 };
 
 function PageWrapper({ children, categories, params }: Props) {

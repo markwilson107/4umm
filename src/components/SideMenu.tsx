@@ -3,7 +3,7 @@ import { ICategory } from "@/types/category";
 import categoryIcons from "@/config/categoryIcons";
 
 type Props = {
-  params?: { id: string };
+  params?: Promise<{ id: string }>;
   categories: ICategory[];
 };
 
